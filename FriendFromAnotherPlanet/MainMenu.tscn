@@ -1,0 +1,209 @@
+[gd_scene load_steps=8 format=3 uid="uid://tf4pu5s5nf14"]
+
+[ext_resource type="Script" path="res://Start.gd" id="1_3tnuf"]
+[ext_resource type="Script" path="res://Video.gd" id="1_45epa"]
+[ext_resource type="Script" path="res://Options.gd" id="1_iisyg"]
+[ext_resource type="Script" path="res://Audio.gd" id="2_ix22j"]
+[ext_resource type="Script" path="res://Quit.gd" id="2_j61fs"]
+[ext_resource type="AudioStream" uid="uid://df2p5w3uijtys" path="res://assets/audio/music/Rolemusic - The White Frame.mp3" id="3_22aqj"]
+[ext_resource type="Script" path="res://Back.gd" id="3_3627v"]
+
+[node name="Main" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" type="VBoxContainer" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.5
+offset_right = 50.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="UI/MainMenu"]
+layout_mode = 2
+text = "Start"
+script = ExtResource("1_3tnuf")
+
+[node name="Options" type="Button" parent="UI/MainMenu"]
+layout_mode = 2
+text = "Options"
+script = ExtResource("1_iisyg")
+
+[node name="Quit" type="Button" parent="UI/MainMenu"]
+layout_mode = 2
+text = "Quit"
+script = ExtResource("2_j61fs")
+
+[node name="Settings" type="TabContainer" parent="UI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.5
+offset_top = -136.5
+offset_right = 236.5
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Video" type="TabBar" parent="UI/Settings"]
+layout_mode = 2
+script = ExtResource("1_45epa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Settings/Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settings/Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="DisplayMode" type="Label" parent="UI/Settings/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Display Mode"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Settings/Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="DisplayMode" type="OptionButton" parent="UI/Settings/Video/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+selected = 1
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+
+[node name="Back" type="Button" parent="UI/Settings/Video"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Back"
+script = ExtResource("3_3627v")
+
+[node name="Audio" type="TabBar" parent="UI/Settings"]
+visible = false
+layout_mode = 2
+script = ExtResource("2_ix22j")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Settings/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -11.5
+offset_right = 23.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Settings/Audio/HBoxContainer"]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="Music" type="Label" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="SFX" type="Label" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="Sound" type="Label" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/Settings/Audio/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Master" type="HSlider" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.1
+
+[node name="Music" type="HSlider" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.1
+
+[node name="SFX" type="HSlider" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.1
+
+[node name="Sound" type="CheckButton" parent="UI/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Back" type="Button" parent="UI/Settings/Audio"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Back"
+script = ExtResource("3_3627v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_22aqj")
+volume_db = -20.0
+bus = &"Music"
+
+[connection signal="pressed" from="UI/MainMenu/Start" to="UI/MainMenu/Start" method="_on_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Options" to="UI/MainMenu/Options" method="_on_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Quit" to="UI/MainMenu/Quit" method="_on_pressed"]
+[connection signal="item_selected" from="UI/Settings/Video/HBoxContainer/VBoxContainer2/DisplayMode" to="UI/Settings/Video" method="_on_display_mode_item_selected"]
+[connection signal="pressed" from="UI/Settings/Video/Back" to="UI/Settings/Video/Back" method="_on_pressed"]
+[connection signal="value_changed" from="UI/Settings/Audio/HBoxContainer/VBoxContainer2/Master" to="UI/Settings/Audio" method="_on_master_value_changed"]
+[connection signal="value_changed" from="UI/Settings/Audio/HBoxContainer/VBoxContainer2/Music" to="UI/Settings/Audio" method="_on_music_value_changed"]
+[connection signal="value_changed" from="UI/Settings/Audio/HBoxContainer/VBoxContainer2/SFX" to="UI/Settings/Audio" method="_on_music_value_changed"]
+[connection signal="value_changed" from="UI/Settings/Audio/HBoxContainer/VBoxContainer2/SFX" to="UI/Settings/Audio" method="_on_sfx_value_changed"]
+[connection signal="toggled" from="UI/Settings/Audio/HBoxContainer/VBoxContainer2/Sound" to="UI/Settings/Audio" method="_on_check_button_toggled"]
+[connection signal="pressed" from="UI/Settings/Audio/Back" to="UI/Settings/Audio/Back" method="_on_pressed"]
