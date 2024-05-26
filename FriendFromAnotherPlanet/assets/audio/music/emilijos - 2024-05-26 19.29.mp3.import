@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsfsoh5mv2beo"
+path="res://.godot/imported/emilijos - 2024-05-26 19.29.mp3-dc20523c0b112ca211db504502dc99be.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/emilijos - 2024-05-26 19.29.mp3"
+dest_files=["res://.godot/imported/emilijos - 2024-05-26 19.29.mp3-dc20523c0b112ca211db504502dc99be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

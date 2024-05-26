@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://xykbt1vj0q23"]
+[gd_scene load_steps=3 format=3 uid="uid://xykbt1vj0q23"]
 
 [ext_resource type="PackedScene" uid="uid://6cvnvxw1bqnb" path="res://scenes/settings_menu/settings_display_button.tscn" id="1_fl4yu"]
+[ext_resource type="PackedScene" uid="uid://bjex4iqjbgkfb" path="res://scenes/settings_menu/settings_audio_slider.tscn" id="2_21yfk"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -21,8 +22,10 @@ offset_right = -200.0
 offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+current_tab = 1
 
 [node name="Video" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
@@ -49,7 +52,6 @@ alignment = 1
 layout_mode = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio"]
@@ -64,23 +66,21 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Audio/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Master" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="Settings_Audio_Slider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_21yfk")]
 layout_mode = 2
-text = "Master volume"
 
-[node name="Music" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="Settings_Audio_Slider2" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_21yfk")]
 layout_mode = 2
-text = "Music volume"
+audio_bus_name = "Music"
 
-[node name="SFX" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="Settings_Audio_Slider3" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_21yfk")]
 layout_mode = 2
-text = "SFX"
-
-[node name="Sound" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Sound"
+audio_bus_name = "SFX"

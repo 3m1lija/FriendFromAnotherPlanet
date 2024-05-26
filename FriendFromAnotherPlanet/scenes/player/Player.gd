@@ -2,18 +2,13 @@ extends CharacterBody2D
 
 @onready var sprite = $Sprite as Sprite2D
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D as AudioStreamPlayer2D
 
 @export var move_speed : float = 125.0
 @export var jump_force : float = 250.0
 @export var fall_speed : float = 200.0
 
 const GRAVITY : float = 800.0
-
-
-func _ready() -> void:
-	#handle_signals()
-	#signal_bus.emit_set_camera_target(self)
-	pass
 
 
 func _physics_process(delta):
@@ -23,6 +18,7 @@ func _physics_process(delta):
 	handle_movement()
 	handle_jump()
 
+	velocity.normalized()
 	move_and_slide()
 
 	flip_character()
@@ -55,6 +51,7 @@ func handle_movement() -> void:
 func handle_jump() -> void:
 	if Input.is_action_just_pressed("jump") == true and is_on_floor() == true:
 		velocity.y = -jump_force
+		audio_stream_player_2d.play()
 		
 	clampf(velocity.y, jump_force, fall_speed)
 

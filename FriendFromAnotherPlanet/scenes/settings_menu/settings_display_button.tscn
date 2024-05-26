@@ -17,10 +17,10 @@ offset_right = 660.0
 offset_bottom = 64.0
 theme_override_constants/separation = 100
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Display_Type" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(232, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 24
 text = "Display Type"
 vertical_alignment = 1
 
