@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://df2p5w3uijtys"
-path="res://.godot/imported/Rolemusic - The White Frame.mp3-dfa008695c138a896f9532a68655c5c8.mp3str"
+path="res://.godot/imported/Rolemusic - The White Frame.mp3-bff3717b9fec629c4f2679b703c6d96d.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/music/Rolemusic - The White Frame.mp3"
-dest_files=["res://.godot/imported/Rolemusic - The White Frame.mp3-dfa008695c138a896f9532a68655c5c8.mp3str"]
+source_file="res://assets/Audio/music/Rolemusic - The White Frame.mp3"
+dest_files=["res://.godot/imported/Rolemusic - The White Frame.mp3-bff3717b9fec629c4f2679b703c6d96d.mp3str"]
 
 [params]
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://6cvnvxw1bqnb"]
+
+[ext_resource type="Script" path="res://scenes/settings_menu/settings_display_button.gd" id="1_5f1hw"]
+
+[node name="Settings_Display_Type" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5f1hw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 660.0
+offset_bottom = 64.0
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(232, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Display Type"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(224, 64)
+layout_mode = 2
