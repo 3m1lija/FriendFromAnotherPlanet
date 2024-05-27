@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dggw40qtdveyk"]
 
-[ext_resource type="Script" path="res://EndFlag.gd" id="1_hv36p"]
+[ext_resource type="Script" path="res://scenes/main/EndFlag.gd" id="1_hv36p"]
 [ext_resource type="Texture2D" uid="uid://cop47aoytyxtb" path="res://assets/Sprites/Objects/tile_0112.png" id="2_uu8c7"]
-[ext_resource type="AudioStream" uid="uid://r2p7ffudwdso" path="res://assets/audio/sfx/powerUp.wav" id="3_01cek"]
+[ext_resource type="AudioStream" path="res://assets/audio/sfx/powerUp.wav" id="3_01cek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5pkv"]
 size = Vector2(18, 17)

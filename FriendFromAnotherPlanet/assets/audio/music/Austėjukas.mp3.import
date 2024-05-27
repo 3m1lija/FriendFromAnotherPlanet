@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cebqf1ccjq381"
-path="res://.godot/imported/Austėjukas.mp3-235a9e1d1715fda9c99dedd98f98d2fc.mp3str"
+path="res://.godot/imported/Austėjukas.mp3-5d2d2293af28ec12ef2c541b1dd6152c.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/music/Austėjukas.mp3"
-dest_files=["res://.godot/imported/Austėjukas.mp3-235a9e1d1715fda9c99dedd98f98d2fc.mp3str"]
+source_file="res://assets/Audio/music/Austėjukas.mp3"
+dest_files=["res://.godot/imported/Austėjukas.mp3-5d2d2293af28ec12ef2c541b1dd6152c.mp3str"]
 
 [params]
 

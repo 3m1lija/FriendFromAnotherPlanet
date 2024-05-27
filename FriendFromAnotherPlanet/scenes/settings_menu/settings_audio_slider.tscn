@@ -16,10 +16,10 @@ audio_bus_name = "Master"
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 48
+theme_override_constants/separation = 44
 
 [node name="Audio_Name" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Master Volume"
@@ -41,5 +41,5 @@ layout_mode = 2
 [node name="Audio_Number" type="Label" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 16
 text = "10"

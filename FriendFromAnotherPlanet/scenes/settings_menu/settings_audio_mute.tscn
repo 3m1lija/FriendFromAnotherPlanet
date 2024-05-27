@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7uacxurgnwik"]
+
+[ext_resource type="Script" path="res://scenes/settings_menu/settings_audio_mute.gd" id="1_muf75"]
+
+[node name="Settings_Audio_Mute" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_muf75")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 292.0
+offset_bottom = 40.0
+theme_override_constants/separation = 40
+
+[node name="Mute_Sound" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(184, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Mute all sound"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+
+[connection signal="toggled" from="HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]

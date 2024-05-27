@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d07ikgxccnwhy" path="res://assets/Font/karma/Karma Future.otf" id="1_v0n5k"]
 [ext_resource type="PackedScene" uid="uid://xykbt1vj0q23" path="res://scenes/settings_menu/settings_tab_container.tscn" id="3_7om8i"]
 
-[node name="Options_Menu" type="Control"]
+[node name="Settings_Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +37,7 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("1_v0n5k")
 theme_override_font_sizes/font_size = 48
-text = "Options"
+text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xykbt1vj0q23"]
+[gd_scene load_steps=4 format=3 uid="uid://xykbt1vj0q23"]
 
 [ext_resource type="PackedScene" uid="uid://6cvnvxw1bqnb" path="res://scenes/settings_menu/settings_display_button.tscn" id="1_fl4yu"]
 [ext_resource type="PackedScene" uid="uid://bjex4iqjbgkfb" path="res://scenes/settings_menu/settings_audio_slider.tscn" id="2_21yfk"]
+[ext_resource type="PackedScene" uid="uid://c7uacxurgnwik" path="res://scenes/settings_menu/settings_audio_mute.tscn" id="3_gu8bn"]
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -22,11 +23,13 @@ offset_right = -200.0
 offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 24
 current_tab = 1
 
 [node name="Video" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
 layout_mode = 1
@@ -53,6 +56,7 @@ layout_mode = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio"]
 layout_mode = 1
@@ -61,10 +65,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Audio/MarginContainer"]
 layout_mode = 2
@@ -84,3 +88,6 @@ audio_bus_name = "Music"
 [node name="Settings_Audio_Slider3" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_21yfk")]
 layout_mode = 2
 audio_bus_name = "SFX"
+
+[node name="Settings_audio_mute" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_gu8bn")]
+layout_mode = 2
