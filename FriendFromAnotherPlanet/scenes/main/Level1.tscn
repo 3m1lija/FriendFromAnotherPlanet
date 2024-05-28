@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ckjre1nrxgh6t" path="res://scenes/pause_menu/pause_menu.tscn" id="4_4lo8q"]
 
 [node name="Main" type="Node2D"]
-process_mode = 3
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -17,14 +16,12 @@ layer_0/tile_data = PackedInt32Array(65533, 131072, 1, 65534, 131072, 1, 65535, 
 
 [node name="EndFlag" parent="Level" instance=ExtResource("2_n0wug")]
 position = Vector2(590, -81)
-next_scene = "res://Level2.tscn"
+next_scene = "res://scenes/main/Level2.tscn"
 
 [node name="Entity" type="Node2D" parent="."]
 
 [node name="Player" parent="Entity" instance=ExtResource("3_2hc5t")]
 
-[node name="PauseMenuScreen" type="CanvasLayer" parent="."]
-process_mode = 3
-layer = 2
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause_Menu" parent="PauseMenuScreen" instance=ExtResource("4_4lo8q")]
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("4_4lo8q")]

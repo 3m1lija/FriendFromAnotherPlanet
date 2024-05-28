@@ -18,7 +18,9 @@ config/windows_native_icon="res://logo_256.ico"
 
 [autoload]
 
-Persistence="*res://Persistence.gd"
+SettingsDataContainer="*res://autoloads/SettingsDataContainer.gd"
+SettingsManager="*res://autoloads/SettingsManager.gd"
+SaveManager="*res://autoloads/SaveManager.gd"
 
 [display]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnqcsngqk16ud"
-path="res://.godot/imported/forest_backround.png-97b69c5632bab068f08ae5af4162b2dd.ctex"
+path="res://.godot/imported/forest_backround.png-af11dc72e6d22a08d8533dcbb66d8389.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backround/forest_backround.png"
-dest_files=["res://.godot/imported/forest_backround.png-97b69c5632bab068f08ae5af4162b2dd.ctex"]
+source_file="res://assets/Backrounds/forest_backround.png"
+dest_files=["res://.godot/imported/forest_backround.png-af11dc72e6d22a08d8533dcbb66d8389.ctex"]
 
 [params]
 

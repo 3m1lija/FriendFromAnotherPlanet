@@ -14,4 +14,5 @@ func _ready():
 
 func on_back_pressed() -> void:
 	back_to_main_menu.emit()
+	SettingsManager.emit_set_settings_dictionary(SettingsDataContainer.create_dictionary())
 	set_process(false)

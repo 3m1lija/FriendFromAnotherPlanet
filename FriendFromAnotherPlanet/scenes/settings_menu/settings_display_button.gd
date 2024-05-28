@@ -14,6 +14,12 @@ func _ready():
 	#select from dropdown menu and give signal to index value
 	add_display_type_items()
 	option_button.item_selected.connect(on_display_type_selected)
+	load_data()
+
+
+func load_data() -> void:
+	on_display_type_selected(SettingsDataContainer.get_display_type_index())
+	option_button.select(SettingsDataContainer.get_display_type_index())
 
 
 func add_display_type_items() -> void:
@@ -22,6 +28,7 @@ func add_display_type_items() -> void:
 
 
 func on_display_type_selected(index : int) -> void:
+	SettingsManager.emit_on_display_type_selected(index)
 	match index:
 		0: #Windowed
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
