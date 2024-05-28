@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dggw40qtdveyk"]
+[gd_scene load_steps=4 format=3 uid="uid://dggw40qtdveyk"]
 
 [ext_resource type="Script" path="res://scenes/main/EndFlag.gd" id="1_hv36p"]
 [ext_resource type="Texture2D" uid="uid://cop47aoytyxtb" path="res://assets/Sprites/Objects/tile_0112.png" id="2_uu8c7"]
-[ext_resource type="AudioStream" path="res://assets/audio/sfx/powerUp.wav" id="3_01cek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5pkv"]
 size = Vector2(18, 17)
@@ -20,7 +19,6 @@ position = Vector2(0.083313, 0.5)
 shape = SubResource("RectangleShape2D_l5pkv")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_01cek")
 volume_db = -20.0
 bus = &"SFX"
 

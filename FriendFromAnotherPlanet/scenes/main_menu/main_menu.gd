@@ -17,6 +17,7 @@ func _ready():
 
 func on_start_pressed() -> void:
 	#change the main menu scene to level scene
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_packed(start_level)
 
 
@@ -41,9 +42,3 @@ func handle_connecting_signals() -> void:
 	settings_button.button_down.connect(on_settings_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
 	settings_menu.back_to_main_menu.connect(on_back_to_main_menu)
-
-
-func _on_pause_menu_exit_to_main_menu():
-	margin_container.visible = true
-	settings_menu.set_process(false)
-	PauseMenu.visible = false

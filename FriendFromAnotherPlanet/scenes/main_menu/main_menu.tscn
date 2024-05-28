@@ -1,13 +1,134 @@
-[gd_scene load_steps=7 format=3 uid="uid://tf4pu5s5nf14"]
+[gd_scene load_steps=22 format=3 uid="uid://ci4eoub17gxv2"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_qqev1"]
-[ext_resource type="Texture2D" uid="uid://bnqcsngqk16ud" path="res://assets/Backround/forest_backround.png" id="2_dnh3b"]
+[ext_resource type="Texture2D" uid="uid://c2t23e27ghj03" path="res://assets/Backround/forest.png" id="2_o7ymy"]
 [ext_resource type="FontFile" uid="uid://d07ikgxccnwhy" path="res://assets/Font/karma/Karma Future.otf" id="3_3dw60"]
 [ext_resource type="FontFile" uid="uid://lydmiks4du7k" path="res://assets/Font/karma/Karma Suture.otf" id="4_51xea"]
 [ext_resource type="AudioStream" uid="uid://cebqf1ccjq381" path="res://assets/Audio/music/Austėjukas.mp3" id="6_pnqp2"]
 [ext_resource type="PackedScene" uid="uid://er3g8on5o3r7" path="res://scenes/settings_menu/settings_menu.tscn" id="12_lajkb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6l3n"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64wid"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hggkg"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5byl"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc3cc"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fikfg"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3t3m"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrauu"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkx58"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlblr"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew3a7"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhlk3"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcdoq"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my44v"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx76k"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
 [node name="Main_Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,9 +143,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -113.0
+offset_right = 36.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_dnh3b")
+texture = ExtResource("2_o7ymy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -73,12 +198,19 @@ custom_minimum_size = Vector2(0, 176)
 layout_mode = 2
 
 [node name="Play_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(224, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_51xea")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_u6l3n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_64wid")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hggkg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w5byl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dc3cc")
 text = "Start"
 
 [node name="Settings_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -86,8 +218,14 @@ custom_minimum_size = Vector2(224, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_51xea")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fikfg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3t3m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mrauu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_bkx58")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rlblr")
 text = "Settings"
 
 [node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -95,8 +233,14 @@ custom_minimum_size = Vector2(224, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_51xea")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ew3a7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vhlk3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kcdoq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_my44v")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mx76k")
 text = "Exit
 "
 

@@ -1,8 +1,56 @@
-[gd_scene load_steps=4 format=3 uid="uid://xykbt1vj0q23"]
+[gd_scene load_steps=10 format=3 uid="uid://xykbt1vj0q23"]
 
 [ext_resource type="PackedScene" uid="uid://6cvnvxw1bqnb" path="res://scenes/settings_menu/settings_display_button.tscn" id="1_fl4yu"]
 [ext_resource type="PackedScene" uid="uid://bjex4iqjbgkfb" path="res://scenes/settings_menu/settings_audio_slider.tscn" id="2_21yfk"]
 [ext_resource type="PackedScene" uid="uid://c7uacxurgnwik" path="res://scenes/settings_menu/settings_audio_mute.tscn" id="3_gu8bn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ldnw"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k2sc"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8k6gm"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wm2a6"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg8qb"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvrlm"]
+bg_color = Color(0.807843, 0.470588, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
 
 [node name="Settings_Tab_Container" type="Control"]
 layout_mode = 3
@@ -23,11 +71,16 @@ offset_right = -200.0
 offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 24
-current_tab = 1
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_8ldnw")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_0k2sc")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_8k6gm")
+theme_override_styles/tab_disabled = SubResource("StyleBoxFlat_wm2a6")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_mg8qb")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hvrlm")
 
 [node name="Video" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 1
 
@@ -55,6 +108,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 1
 

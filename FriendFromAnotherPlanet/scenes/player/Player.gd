@@ -11,6 +11,10 @@ extends CharacterBody2D
 const GRAVITY : float = 800.0
 
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
+
 func _physics_process(delta):
 	if not is_on_floor():
 		apply_gravity(delta)
