@@ -27,15 +27,15 @@ func emit_on_display_type_selected(index: int) -> void:
 	on_display_type_selected.emit(index)
 
 
-func emit_on_master_sound_set(value: int) -> void:
+func emit_on_master_sound_set(value: float) -> void:
 	on_master_sound_set.emit(value)
 
 
-func emit_on_music_sound_set(value: int) -> void:
+func emit_on_music_sound_set(value: float) -> void:
 	on_music_sound_set.emit(value)
 
 
-func emit_on_sfx_sound_set(value: int) -> void:
+func emit_on_sfx_sound_set(value: float) -> void:
 	on_sfx_sound_set.emit(value)
 
 

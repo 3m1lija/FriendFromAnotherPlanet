@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_qkpir"]
 [ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://assets/Sprites/Characters/character_0004.png" id="2_m166b"]
 [ext_resource type="Texture2D" uid="uid://drk78cnbenmuq" path="res://assets/Sprites/Characters/character_0005.png" id="3_h8als"]
-[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/audio/sfx/jump.wav" id="4_44pl4"]
+[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/Audio/sfx/jump.wav" id="4_44pl4"]
 [ext_resource type="Script" path="res://scenes/player/ConcreteStrategyWalk.gd" id="5_mr1ot"]
 [ext_resource type="Script" path="res://scenes/player/ConcreteStrategyJump.gd" id="6_h3fv5"]
 [ext_resource type="Script" path="res://scenes/player/MoveStrategy.gd" id="7_uivjk"]

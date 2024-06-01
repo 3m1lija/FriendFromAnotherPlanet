@@ -1,10 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://ci4eoub17gxv2"]
+[gd_scene load_steps=29 format=3 uid="uid://ci4eoub17gxv2"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_qqev1"]
 [ext_resource type="Texture2D" uid="uid://c2t23e27ghj03" path="res://assets/Backrounds/forest.png" id="2_o7ymy"]
 [ext_resource type="FontFile" uid="uid://d07ikgxccnwhy" path="res://assets/Font/karma/Karma Future.otf" id="3_3dw60"]
 [ext_resource type="FontFile" uid="uid://lydmiks4du7k" path="res://assets/Font/karma/Karma Suture.otf" id="4_51xea"]
-[ext_resource type="AudioStream" uid="uid://cebqf1ccjq381" path="res://assets/audio/music/Austėjukas.mp3" id="6_pnqp2"]
+[ext_resource type="AudioStream" uid="uid://cebqf1ccjq381" path="res://assets/Audio/music/Austėjukas.mp3" id="6_pnqp2"]
+[ext_resource type="Script" path="res://scenes/main_menu/EventManager.gd" id="7_ifhoj"]
+[ext_resource type="Script" path="res://scenes/main_menu/Editor.gd" id="8_bfmpv"]
+[ext_resource type="Script" path="res://scenes/main_menu/EventListener.gd" id="8_dfuft"]
+[ext_resource type="Script" path="res://scenes/main_menu/PlayButtonListener.gd" id="9_w7afx"]
+[ext_resource type="Script" path="res://scenes/main_menu/SettingsButtonListener.gd" id="10_j3goo"]
+[ext_resource type="Script" path="res://scenes/main_menu/ExitButtonListener.gd" id="11_73ixc"]
+[ext_resource type="Script" path="res://scenes/main_menu/BackToMainMenuListener.gd" id="12_32g7q"]
 [ext_resource type="PackedScene" uid="uid://er3g8on5o3r7" path="res://scenes/settings_menu/settings_menu.tscn" id="12_lajkb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6l3n"]
@@ -253,3 +260,24 @@ stream = ExtResource("6_pnqp2")
 volume_db = -30.0
 autoplay = true
 bus = &"Music"
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource("7_ifhoj")
+
+[node name="Editor" type="Node" parent="EventManager"]
+script = ExtResource("8_bfmpv")
+
+[node name="EventListener" type="Node" parent="."]
+script = ExtResource("8_dfuft")
+
+[node name="PlayButtonListener" type="Node" parent="EventListener"]
+script = ExtResource("9_w7afx")
+
+[node name="SettingsButtonListener" type="Node" parent="EventListener"]
+script = ExtResource("10_j3goo")
+
+[node name="ExitButtonListener" type="Node" parent="EventListener"]
+script = ExtResource("11_73ixc")
+
+[node name="BackToMainMenuListener" type="Node" parent="EventListener"]
+script = ExtResource("12_32g7q")
