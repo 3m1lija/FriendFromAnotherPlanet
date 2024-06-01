@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2t23e27ghj03" path="res://assets/Backrounds/forest.png" id="2_o7ymy"]
 [ext_resource type="FontFile" uid="uid://d07ikgxccnwhy" path="res://assets/Font/karma/Karma Future.otf" id="3_3dw60"]
 [ext_resource type="FontFile" uid="uid://lydmiks4du7k" path="res://assets/Font/karma/Karma Suture.otf" id="4_51xea"]
-[ext_resource type="AudioStream" uid="uid://cebqf1ccjq381" path="res://assets/Audio/music/Austėjukas.mp3" id="6_pnqp2"]
+[ext_resource type="AudioStream" uid="uid://cebqf1ccjq381" path="res://assets/audio/music/Austėjukas.mp3" id="6_pnqp2"]
 [ext_resource type="PackedScene" uid="uid://er3g8on5o3r7" path="res://scenes/settings_menu/settings_menu.tscn" id="12_lajkb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6l3n"]

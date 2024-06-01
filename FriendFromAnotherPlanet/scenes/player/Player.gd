@@ -10,6 +10,8 @@ extends CharacterBody2D
 
 const GRAVITY : float = 800.0
 
+@onready var context = $"../Context"
+
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -18,9 +20,15 @@ func _ready():
 func _physics_process(delta):
 	if not is_on_floor():
 		apply_gravity(delta)
-		
-	handle_movement()
-	handle_jump()
+	
+	#code picks a concrete strategy based on the input and passes it to the context
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		context.set_move_strategy(ConcreteStrategyJump.new())
+	else:
+		context.set_move_strategy(ConcreteStrategyWalk.new())
+	
+	context.move(self)
+
 
 	velocity.normalized()
 	move_and_slide()
@@ -36,28 +44,6 @@ func _physics_process(delta):
 func apply_gravity(delta : float) -> void:
 	#prebuild variable within the class of CharacterBody2D
 	velocity.y += GRAVITY * delta
-
-
-func handle_movement() -> void:
-	#if player wants to move right - it sets the movement direction as a positive number,
-	#otherwise, it's set as a negative number
-	var movement_direction : float = Input.get_axis("move_left", "move_right")
-	
-	#nothing is changed, the character stays still
-	velocity.x = 0.0
-	
-	if movement_direction < 0:
-		velocity.x -= move_speed
-	if movement_direction > 0:
-		velocity.x += move_speed
-
-
-func handle_jump() -> void:
-	if Input.is_action_just_pressed("jump") == true and is_on_floor() == true:
-		velocity.y = -jump_force
-		audio_stream_player_2d.play()
-		
-	clampf(velocity.y, jump_force, fall_speed)
 
 
 func flip_character() -> void:
