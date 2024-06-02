@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://d07ikgxccnwhy" path="res://assets/Font/karma/Karma Future.otf" id="3_3dw60"]
 [ext_resource type="FontFile" uid="uid://lydmiks4du7k" path="res://assets/Font/karma/Karma Suture.otf" id="4_51xea"]
 [ext_resource type="AudioStream" uid="uid://cebqf1ccjq381" path="res://assets/audio/music/Austėjukas.mp3" id="6_pnqp2"]
-[ext_resource type="Script" path="res://scenes/main_menu/MainMenuObserver.gd" id="7_ifhoj"]
+[ext_resource type="Script" path="res://scenes/main_menu/MainMenuManager.gd" id="7_ifhoj"]
 [ext_resource type="Script" path="res://scenes/main_menu/Observer.gd" id="8_dfuft"]
 [ext_resource type="Script" path="res://scenes/main_menu/SettingsMenuObserver.gd" id="10_j3goo"]
 [ext_resource type="Script" path="res://scenes/main_menu/ButtonObserver.gd" id="11_73ixc"]
@@ -131,7 +131,7 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(1, 1, 1, 1)
 
-[node name="MainMenuObserver" type="Node"]
+[node name="MainMenuManager" type="Node"]
 script = ExtResource("7_ifhoj")
 
 [node name="Main_Menu" type="Control" parent="."]

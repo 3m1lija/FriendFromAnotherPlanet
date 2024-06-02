@@ -1,6 +1,6 @@
 class_name MainMenu
 
-extends MainMenuObserver
+extends MainMenuManager
 
 @onready var play_button = $MarginContainer/HBoxContainer/VBoxContainer/Play_Button as Button
 @onready var settings_button = $MarginContainer/HBoxContainer/VBoxContainer/Settings_Button as Button

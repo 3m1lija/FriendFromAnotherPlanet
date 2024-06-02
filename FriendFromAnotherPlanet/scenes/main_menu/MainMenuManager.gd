@@ -1,5 +1,5 @@
 # Observable subject
-class_name MainMenuObserver
+class_name MainMenuManager
 
 extends Node
 
