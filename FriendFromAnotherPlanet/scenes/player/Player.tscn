@@ -1,13 +1,90 @@
 [gd_scene load_steps=16 format=3 uid="uid://4hb7vl3y0akd"]
 
-[ext_resource type="Script" path="res://scenes/player/Player.gd" id="1_qkpir"]
 [ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://assets/Sprites/Characters/character_0004.png" id="2_m166b"]
 [ext_resource type="Texture2D" uid="uid://drk78cnbenmuq" path="res://assets/Sprites/Characters/character_0005.png" id="3_h8als"]
-[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/audio/sfx/jump.wav" id="4_44pl4"]
+[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/Audio/sfx/jump.wav" id="4_44pl4"]
 [ext_resource type="Script" path="res://scenes/player/ConcreteStrategyWalk.gd" id="5_mr1ot"]
 [ext_resource type="Script" path="res://scenes/player/ConcreteStrategyJump.gd" id="6_h3fv5"]
 [ext_resource type="Script" path="res://scenes/player/MoveStrategy.gd" id="7_uivjk"]
 [ext_resource type="Script" path="res://scenes/player/Context.gd" id="8_thcx8"]
+
+[sub_resource type="GDScript" id="GDScript_evdke"]
+script/source = "extends CharacterBody2D
+
+@onready var sprite = $Sprite as Sprite2D
+@onready var animation_player = $AnimationPlayer as AnimationPlayer
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D as AudioStreamPlayer2D
+
+@export var move_speed : float = 125.0
+@export var jump_force : float = 250.0
+@export var fall_speed : float = 200.0
+
+const GRAVITY : float = 800.0
+
+@onready var context = $\"../Context\"
+
+
+func _ready():
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
+
+func _physics_process(delta):
+	if not is_on_floor():
+		apply_gravity(delta)
+	
+	#code picks a concrete strategy based on the input and passes it to the context
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		context.set_move_strategy(ConcreteStrategyJump.new())
+	else:
+		context.set_move_strategy(ConcreteStrategyWalk.new())
+	
+	context.move(self)
+
+
+	velocity.normalized()
+	move_and_slide()
+
+	flip_character()
+	
+	handle_animation()
+	
+	if global_position.y > 100:
+		game_over()
+
+
+func apply_gravity(delta : float) -> void:
+	#prebuild variable within the class of CharacterBody2D
+	velocity.y += GRAVITY * delta
+
+
+func flip_character() -> void:
+	#character is moving right
+	if velocity.x > 0:
+		sprite.flip_h = true
+		
+	#character is moving left
+	if velocity.x < 0:
+		sprite.flip_h = false
+
+
+func handle_animation() -> void:
+	#checks if the character is in \"idle\" position
+	#Vector2 is stored like this - Vector2(0, 0)
+	if velocity == Vector2.ZERO:
+		animation_player.play(\"idle\")
+	
+	#checks if the character is in \"run\" position
+	if velocity.x != 0 and velocity.y == 0:
+		animation_player.play(\"run\")
+		
+	#checks if the character is in \"jump\" position
+	if velocity.y != 0:
+		animation_player.play(\"jump\")
+
+
+func game_over():
+	get_tree().reload_current_scene()
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uocoh"]
 radius = 9.0
@@ -162,7 +239,7 @@ _data = {
 [node name="Main" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
-script = ExtResource("1_qkpir")
+script = SubResource("GDScript_evdke")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
 scale = Vector2(1.2, 0.8)

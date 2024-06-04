@@ -1,27 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdl2i4kk7jhyw"]
+[gd_scene load_steps=5 format=3 uid="uid://bnnf6mgpqgu3c"]
 
-[ext_resource type="TileSet" uid="uid://c03lhow5aejjl" path="res://tileset.tres" id="1_dyxae"]
-[ext_resource type="PackedScene" uid="uid://4hb7vl3y0akd" path="res://scenes/player/Player.tscn" id="2_m3kru"]
-[ext_resource type="PackedScene" uid="uid://dggw40qtdveyk" path="res://scenes/main/EndFlag.tscn" id="3_iorja"]
-[ext_resource type="PackedScene" uid="uid://ckjre1nrxgh6t" path="res://scenes/pause_menu/pause_menu.tscn" id="4_528rb"]
+[ext_resource type="TileSet" uid="uid://c03lhow5aejjl" path="res://tileset.tres" id="1_4i47f"]
+[ext_resource type="PackedScene" uid="uid://dggw40qtdveyk" path="res://scenes/main/EndFlag.tscn" id="2_7rv82"]
+[ext_resource type="PackedScene" uid="uid://4hb7vl3y0akd" path="res://scenes/player/Player.tscn" id="3_3gcie"]
+[ext_resource type="PackedScene" uid="uid://ckjre1nrxgh6t" path="res://scenes/pause_menu/pause_menu.tscn" id="4_5bwd8"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Level" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Level"]
-tile_set = ExtResource("1_dyxae")
+tile_set = ExtResource("1_4i47f")
 format = 2
 layer_0/tile_data = PackedInt32Array(65533, 1114112, 0, 131069, 1114112, 2, 131070, 1179648, 2, 131071, 1179648, 2, 65536, 1179648, 2, 65537, 1179648, 2, 2, 1245184, 0, 65534, 1179648, 0, 65535, 1179648, 0, 0, 1179648, 0, 1, 1179648, 0, 65538, 1245184, 2, -65532, 1114112, 0, -131065, 1114112, 0, -65531, 1245184, 0, 4, 1114112, 2, 5, 1245184, 2, -65528, 1245184, 2, -65529, 1114112, 2, -131064, 1245184, 0, -131060, 1114112, 0, -131059, 1179648, 0, -131058, 1245184, 0, -65523, 1179648, 2, -65522, 1245184, 2, -65524, 1114112, 2, -131055, 1048576, 1, -65519, 1048576, 2, 17, 1048576, 2, 65553, 1048576, 3, -131051, 1048576, 1, 21, 1048576, 3, -65515, 1048576, 2, -131047, 1048576, 1, -65511, 1048576, 3, 65565, 1114112, 0, 65566, 1179648, 0, 65567, 1179648, 0, 65568, 1245184, 0, 131101, 1114112, 1, 196637, 1114112, 2, 131102, 1179648, 1, 196638, 1179648, 2, 131103, 1179648, 1, 196639, 1179648, 2, 131104, 1245184, 1, 196640, 1245184, 2)
 
-[node name="EndFlag" parent="Level" instance=ExtResource("3_iorja")]
+[node name="EndFlag" parent="Level" instance=ExtResource("2_7rv82")]
 position = Vector2(574, 10)
-next_scene = "res://scenes/main/Level3.tscn"
+next_scene = "res://scenes/main/EndScene.tscn"
 
 [node name="Entity" type="Node2D" parent="."]
 
-[node name="Player" parent="Entity" instance=ExtResource("2_m3kru")]
+[node name="Player" parent="Entity" instance=ExtResource("3_3gcie")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("4_528rb")]
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("4_5bwd8")]

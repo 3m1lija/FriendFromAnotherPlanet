@@ -8,7 +8,7 @@ extends MainMenuManager
 @onready var settings_menu = $Settings_Menu as SettingsMenu
 @onready var margin_container = $MarginContainer as MarginContainer
 
-@onready var start_level = preload("res://scenes/main/Level1.tscn") as PackedScene
+@onready var start_first_scene = preload("res://scenes/main/StartScene.tscn") as PackedScene
 
 
 func _ready():
@@ -19,7 +19,7 @@ func _ready():
 func on_start_pressed() -> void:
 	#change the main menu scene to level scene
 	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_packed(start_level)
+	get_tree().change_scene_to_packed(start_first_scene)
 	notify("start_pressed")
 
 
