@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhsur4deibk1p"]
+[gd_scene load_steps=13 format=3 uid="uid://dhsur4deibk1p"]
 
-[ext_resource type="Script" path="res://scenes/player/PlayerStartAnimation.gd" id="1_lv2f2"]
+[ext_resource type="Script" path="res://scenes/main/StartScene.gd" id="1_ml1p3"]
 [ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://assets/Sprites/Characters/character_0004.png" id="2_jqnjc"]
+[ext_resource type="Script" path="res://scenes/entities/player/PlayerAnimation.gd" id="2_lq7vp"]
 [ext_resource type="Texture2D" uid="uid://drk78cnbenmuq" path="res://assets/Sprites/Characters/character_0005.png" id="3_n4mng"]
 [ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/Audio/sfx/jump.wav" id="4_avcha"]
 [ext_resource type="TileSet" uid="uid://c03lhow5aejjl" path="res://tileset.tres" id="5_48u0i"]
@@ -130,9 +131,10 @@ _data = {
 }
 
 [node name="StartScene" type="Node2D"]
+script = ExtResource("1_ml1p3")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_lv2f2")
+script = ExtResource("2_lq7vp")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
 scale = Vector2(1.2, 0.8)

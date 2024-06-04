@@ -1,0 +1,23 @@
+extends Node
+
+@onready var start_first_level = preload("res://scenes/main/Level1.tscn") as PackedScene
+
+
+func _ready():
+	DialogueManager.show_dialogue_balloon(load("res://dialogue/first_scene.dialogue"), "start")
+	DialogueManager.dialogue_ended.connect(_on_dialogue_manager_dialogue_ended)
+
+
+func _physics_process(delta):
+	pass
+
+
+func _on_dialogue_manager_dialogue_ended(resource: DialogueResource) -> void:
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_packed(start_first_level)
+
+
+func _unhandled_input(_event : InputEvent) -> void:
+	if Input.is_action_just_pressed("do_dialogue"):
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/first_scene.dialogue"), "start")
+		return
