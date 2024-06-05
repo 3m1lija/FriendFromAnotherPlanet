@@ -1,4 +1,4 @@
-class_name Level4
+class_name Level2
 
 extends Node2D
 
@@ -22,7 +22,7 @@ func _ready():
 # Function to spawn the new area (EndFlag)
 func show_end_flag():
 	# Store the collected parts count for the next level
-	Global.collected_parts_count +=1
+	Global.collected_parts_count += 1
 	
 	update_ui_counter()
 	

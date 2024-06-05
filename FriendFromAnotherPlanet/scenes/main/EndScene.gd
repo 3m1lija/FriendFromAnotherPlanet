@@ -1,6 +1,6 @@
 extends Node
 
-@onready var end_game = preload("res://scenes/main/Level1.tscn") as PackedScene
+@onready var end_game = preload("res://scenes/main_menu/main_menu.tscn") as PackedScene
 
 
 func _ready():

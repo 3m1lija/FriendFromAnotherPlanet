@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://sykexs7ybwtk"]
+[gd_scene load_steps=7 format=3 uid="uid://sykexs7ybwtk"]
 
 [ext_resource type="TileSet" uid="uid://c03lhow5aejjl" path="res://tileset.tres" id="1_k26qr"]
+[ext_resource type="Script" path="res://scenes/main/Level1.gd" id="1_qxj14"]
 [ext_resource type="PackedScene" uid="uid://dggw40qtdveyk" path="res://scenes/main/EndFlag.tscn" id="2_n0wug"]
 [ext_resource type="PackedScene" uid="uid://4hb7vl3y0akd" path="res://scenes/entities/player/Player.tscn" id="3_2hc5t"]
 [ext_resource type="PackedScene" uid="uid://ckjre1nrxgh6t" path="res://scenes/pause_menu/pause_menu.tscn" id="4_4lo8q"]
+[ext_resource type="PackedScene" uid="uid://d2f1wwgc2sv22" path="res://scenes/entities/robot/robot_part.tscn" id="5_wv7yj"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_qxj14")
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -21,6 +24,13 @@ next_scene = "res://scenes/main/Level2.tscn"
 [node name="Entity" type="Node2D" parent="."]
 
 [node name="Player" parent="Entity" instance=ExtResource("3_2hc5t")]
+
+[node name="RobotPart" parent="Entity" instance=ExtResource("5_wv7yj")]
+position = Vector2(-76, -8)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

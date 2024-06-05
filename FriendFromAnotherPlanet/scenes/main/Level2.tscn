@@ -28,6 +28,10 @@ next_scene = "res://scenes/main/Level3.tscn"
 [node name="RobotPart" parent="Entity" instance=ExtResource("4_o30q1")]
 position = Vector2(-47, -9)
 
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("4_528rb")]
