@@ -10,6 +10,11 @@ extends Control
 
 
 func _ready():
+	print("Pause menu ready")
+	print("Resume button: ", resume_button)
+	print("Exit to main button: ", exit_to_main_button)
+	print("Animation player: ", animation_player)
+	
 	resume_button.pressed.connect(on_resume_pressed)
 	exit_to_main_button.pressed.connect(on_exit_pressed)
 	hide()
@@ -22,13 +27,19 @@ func _process(delta):
 func resume() -> void:
 	hide()
 	get_tree().paused = false
-	animation_player.play_backwards("blur")
+	if animation_player:
+		animation_player.play_backwards("blur")
+	else:
+		print("AnimationPlayer is null")
 
 
 func pause() -> void:
 	get_tree().paused = true
 	show()
-	animation_player.play("blur")
+	if animation_player:
+		animation_player.play("blur")
+	else:
+		print("AnimationPlayer is null")
 
 
 func on_resume_pressed() -> void:

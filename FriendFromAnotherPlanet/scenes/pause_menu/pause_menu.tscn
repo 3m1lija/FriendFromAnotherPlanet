@@ -124,9 +124,6 @@ layout_mode = 2
 text = "Exit To Main Menu"
 
 [node name="Main_Menu" parent="." instance=ExtResource("3_70nkd")]
-process_mode = 0
-visible = false
-layout_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
