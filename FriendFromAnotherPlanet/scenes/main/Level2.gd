@@ -1,4 +1,4 @@
-class_name Level4
+class_name Level2
 
 extends Node2D
 
@@ -33,7 +33,7 @@ func show_end_flag():
 
 func update_ui_counter():
 	# Assuming you have a label node named "part_counter_label" in the UI
-	var ui_control = $LabelLayer/UI_Control
+	var ui_control = $UILayer/UI_Control
 	ui_control.emit_on_part_collected(Global.collected_parts_count)
 	#part_counter_label.text = str(Global.collected_parts_count) + " / 4"
 	pass

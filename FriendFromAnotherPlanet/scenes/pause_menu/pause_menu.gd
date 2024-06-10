@@ -8,15 +8,16 @@ extends Control
 @onready var margin_container = $PanelContainer/MarginContainer
 @onready var animation_player = $AnimationPlayer as AnimationPlayer
 
+@onready var color_rect = $ColorRect
+
 
 func _ready():
-	print("Pause menu ready")
-	print("Resume button: ", resume_button)
-	print("Exit to main button: ", exit_to_main_button)
-	print("Animation player: ", animation_player)
-	
 	resume_button.pressed.connect(on_resume_pressed)
 	exit_to_main_button.pressed.connect(on_exit_pressed)
+	
+	# Ensure the ColorRect is visible for debugging
+	color_rect.color = Color(1, 0, 0, 0.5)  # Semi-transparent red
+	
 	hide()
 
 
@@ -25,21 +26,23 @@ func _process(delta):
 
 
 func resume() -> void:
+	print("Resuming game")
 	hide()
 	get_tree().paused = false
-	if animation_player:
-		animation_player.play_backwards("blur")
-	else:
-		print("AnimationPlayer is null")
+	#if animation_player:
+		#animation_player.play_backwards("blur")
+	#else:
+		#print("AnimationPlayer is null")
 
 
 func pause() -> void:
+	print("Pausing game")
 	get_tree().paused = true
 	show()
-	if animation_player:
-		animation_player.play("blur")
-	else:
-		print("AnimationPlayer is null")
+	#if animation_player:
+		#animation_player.play("blur")
+	#else:
+		#print("AnimationPlayer is null")
 
 
 func on_resume_pressed() -> void:
