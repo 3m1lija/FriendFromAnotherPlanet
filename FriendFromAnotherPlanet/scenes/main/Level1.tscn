@@ -29,11 +29,9 @@ next_scene = "res://scenes/main/Level2.tscn"
 [node name="RobotPart" parent="Entity" instance=ExtResource("5_wv7yj")]
 position = Vector2(-76, -8)
 
-[node name="LabelLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
 
-[node name="UI_Control" parent="LabelLayer" instance=ExtResource("7_2egv5")]
+[node name="Pause_Menu" parent="UILayer" instance=ExtResource("4_4lo8q")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("4_4lo8q")]
+[node name="UI_Control" parent="UILayer" instance=ExtResource("7_2egv5")]
+top_level = true

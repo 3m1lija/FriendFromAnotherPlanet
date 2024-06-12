@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbmoso4rhwo6g"
-path="res://.godot/imported/forest.png-3f512ed1785b4a989e32c03282d84828.ctex"
+uid="uid://cvl4bxp8umfkc"
+path="res://.godot/imported/girl_side_walk.png-9b9976d5575e11cef4d45d0c748594e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backrounds/forest.png"
-dest_files=["res://.godot/imported/forest.png-3f512ed1785b4a989e32c03282d84828.ctex"]
+source_file="res://assets/Sprites/Characters/girl_side_walk.png"
+dest_files=["res://.godot/imported/girl_side_walk.png-9b9976d5575e11cef4d45d0c748594e7.ctex"]
 
 [params]
 

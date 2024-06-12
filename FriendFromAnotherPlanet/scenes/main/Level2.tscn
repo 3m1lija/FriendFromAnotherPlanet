@@ -36,5 +36,4 @@ top_level = true
 visibility_layer = 2
 
 [node name="UI_Control" parent="UILayer" instance=ExtResource("7_7aaj4")]
-visible = false
 show_behind_parent = true

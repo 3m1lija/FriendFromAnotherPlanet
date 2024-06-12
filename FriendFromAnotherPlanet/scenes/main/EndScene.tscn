@@ -1,15 +1,80 @@
-[gd_scene load_steps=13 format=3 uid="uid://bn7ri7tn1sfel"]
+[gd_scene load_steps=18 format=3 uid="uid://bn7ri7tn1sfel"]
 
 [ext_resource type="Script" path="res://scenes/main/EndScene.gd" id="1_gpjq5"]
 [ext_resource type="Script" path="res://scenes/entities/player/PlayerAnimation.gd" id="2_6y0mc"]
-[ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://assets/Sprites/Characters/character_0004.png" id="2_08gtv"]
-[ext_resource type="Texture2D" uid="uid://drk78cnbenmuq" path="res://assets/Sprites/Characters/character_0005.png" id="3_d3ba5"]
-[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/Audio/sfx/jump.wav" id="4_nfh3h"]
+[ext_resource type="Texture2D" uid="uid://cqsuv1u1ywle2" path="res://assets/Sprites/Characters/girl_side.png" id="3_42wgt"]
+[ext_resource type="Script" path="res://scenes/entities/robot/RobotAnimation.gd" id="4_vs3h5"]
 [ext_resource type="TileSet" uid="uid://c03lhow5aejjl" path="res://tileset.tres" id="5_10xaf"]
+[ext_resource type="Texture2D" uid="uid://dpyhseogkxexm" path="res://assets/Sprites/Characters/robot_side.png" id="5_aty1c"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_acnru"]
-radius = 9.0
-height = 18.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7srrb"]
+radius = 6.0
+height = 32.0
+
+[sub_resource type="Animation" id="Animation_jl2ax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_42wgt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_qhpp2"]
+resource_name = "girl_dialogue"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_42wgt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.2, 1.8), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1p1k"]
+_data = {
+"RESET": SubResource("Animation_jl2ax"),
+"girl_dialogue": SubResource("Animation_qhpp2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1k53"]
+radius = 6.0
 
 [sub_resource type="Animation" id="Animation_wuw6e"]
 length = 0.001
@@ -23,7 +88,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_08gtv")]
+"values": [ExtResource("5_aty1c")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -35,91 +100,49 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1.2, 0.8)]
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_tnhwp"]
 resource_name = "idle"
+length = 1.8
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_08gtv")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 0.8), Vector2(1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_cmr28"]
 resource_name = "jump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_d3ba5")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_xqb3x"]
 resource_name = "run"
 length = 0.4
 loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_m52wt"]
+resource_name = "robot_dialogue"
+length = 1.8
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:scale")
+tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [ExtResource("5_aty1c")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:texture")
+tracks/1/path = NodePath("Sprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_08gtv"), ExtResource("3_d3ba5"), ExtResource("2_08gtv")]
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.2, 1.8), Vector2(2, 2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l7cfn"]
@@ -127,6 +150,7 @@ _data = {
 "RESET": SubResource("Animation_wuw6e"),
 "idle": SubResource("Animation_tnhwp"),
 "jump": SubResource("Animation_cmr28"),
+"robot_dialogue": SubResource("Animation_m52wt"),
 "run": SubResource("Animation_xqb3x")
 }
 
@@ -137,24 +161,36 @@ script = ExtResource("1_gpjq5")
 script = ExtResource("2_6y0mc")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
-scale = Vector2(1.2, 0.8)
-texture = ExtResource("2_08gtv")
-offset = Vector2(0, -12)
+position = Vector2(25, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("3_42wgt")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -9)
-shape = SubResource("CapsuleShape2D_acnru")
+position = Vector2(25, -15)
+shape = SubResource("CapsuleShape2D_7srrb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
 libraries = {
-"": SubResource("AnimationLibrary_l7cfn")
+"": SubResource("AnimationLibrary_s1p1k")
 }
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("4_nfh3h")
-volume_db = -30.0
-bus = &"SFX"
+[node name="Robot" type="CharacterBody2D" parent="."]
+script = ExtResource("4_vs3h5")
+
+[node name="Sprite" type="Sprite2D" parent="Robot"]
+position = Vector2(-30, -14)
+scale = Vector2(2, 2)
+texture = ExtResource("5_aty1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Robot"]
+position = Vector2(-31, -14)
+shape = SubResource("CapsuleShape2D_p1k53")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Robot"]
+libraries = {
+"": SubResource("AnimationLibrary_l7cfn")
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("5_10xaf")
@@ -162,4 +198,4 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65533, 1114112, 0, 131069, 1114112, 2, 131070, 1179648, 2, 131071, 1179648, 2, 65536, 1179648, 2, 65537, 1179648, 2, 2, 1245184, 0, 65534, 1179648, 0, 65535, 1179648, 0, 0, 1179648, 0, 1, 1179648, 0, 65538, 1245184, 2, -65532, 1114112, 0, -131065, 1114112, 0, -65531, 1245184, 0, 4, 1114112, 2, 5, 1245184, 2, -65528, 1245184, 2, -65529, 1114112, 2, -131064, 1245184, 0, -131060, 1114112, 0, -131059, 1179648, 0, -131058, 1245184, 0, -65523, 1179648, 2, -65522, 1245184, 2, -65524, 1114112, 2, -131055, 1048576, 1, -65519, 1048576, 2, 17, 1048576, 2, 65553, 1048576, 3, -131051, 1048576, 1, 21, 1048576, 3, -65515, 1048576, 2, -131047, 1048576, 1, -65511, 1048576, 3, 65565, 1114112, 0, 65566, 1179648, 0, 65567, 1179648, 0, 65568, 1245184, 0, 131101, 1114112, 1, 196637, 1114112, 2, 131102, 1179648, 1, 196638, 1179648, 2, 131103, 1179648, 1, 196639, 1179648, 2, 131104, 1245184, 1, 196640, 1245184, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(5, 5)

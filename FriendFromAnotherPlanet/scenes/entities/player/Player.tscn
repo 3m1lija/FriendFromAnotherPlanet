@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://4hb7vl3y0akd"]
+[gd_scene load_steps=17 format=3 uid="uid://4hb7vl3y0akd"]
 
 [ext_resource type="Texture2D" uid="uid://c3nvqgsbwhv3a" path="res://assets/Sprites/Characters/character_0004.png" id="2_m166b"]
-[ext_resource type="Texture2D" uid="uid://drk78cnbenmuq" path="res://assets/Sprites/Characters/character_0005.png" id="3_h8als"]
-[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/Audio/sfx/jump.wav" id="4_44pl4"]
+[ext_resource type="Texture2D" uid="uid://cqsuv1u1ywle2" path="res://assets/Sprites/Characters/girl_side.png" id="2_sx0h2"]
+[ext_resource type="AudioStream" uid="uid://ff2khhyhe5x0" path="res://assets/audio/sfx/jump.wav" id="4_44pl4"]
+[ext_resource type="Texture2D" uid="uid://cvl4bxp8umfkc" path="res://assets/Sprites/Characters/girl_side_walk.png" id="4_v030t"]
 [ext_resource type="Script" path="res://scenes/entities/player/ConcreteStrategyWalk.gd" id="5_mr1ot"]
 [ext_resource type="Script" path="res://scenes/entities/player/ConcreteStrategyJump.gd" id="6_h3fv5"]
 [ext_resource type="Script" path="res://scenes/entities/player/MoveStrategy.gd" id="7_uivjk"]
@@ -60,11 +61,11 @@ func apply_gravity(delta : float) -> void:
 func flip_character() -> void:
 	#character is moving right
 	if velocity.x > 0:
-		sprite.flip_h = true
+		sprite.flip_h = false
 		
 	#character is moving left
 	if velocity.x < 0:
-		sprite.flip_h = false
+		sprite.flip_h = true
 
 
 func handle_animation() -> void:
@@ -87,8 +88,8 @@ func game_over():
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uocoh"]
-radius = 9.0
-height = 18.0
+radius = 8.0
+height = 32.0
 
 [sub_resource type="GDScript" id="GDScript_l2kxs"]
 script/source = "extends Camera2D
@@ -146,6 +147,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_tnhwp"]
 resource_name = "idle"
+length = 1.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -157,19 +159,19 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_m166b")]
+"values": [ExtResource("2_sx0h2")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 2
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0, 0.9, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1.2, 0.8), Vector2(1, 1)]
+"values": [Vector2(2, 2), Vector2(2.2, 1.8), Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_cmr28"]
@@ -184,7 +186,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_h8als")]
+"values": [ExtResource("4_v030t")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -196,12 +198,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(2, 2)]
 }
 
 [sub_resource type="Animation" id="Animation_xqb3x"]
 resource_name = "run"
-length = 0.4
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -213,7 +215,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [Vector2(2, 2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -222,10 +224,10 @@ tracks/1/path = NodePath("Sprite:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.3, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("2_m166b"), ExtResource("3_h8als"), ExtResource("2_m166b")]
+"values": [ExtResource("2_sx0h2"), ExtResource("4_v030t"), ExtResource("2_sx0h2")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l7cfn"]
@@ -242,13 +244,13 @@ _data = {
 script = SubResource("GDScript_evdke")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(-1, 8)
 scale = Vector2(1.2, 0.8)
 texture = ExtResource("2_m166b")
 offset = Vector2(0, -12)
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -9)
+position = Vector2(-2, -16)
 shape = SubResource("CapsuleShape2D_uocoh")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

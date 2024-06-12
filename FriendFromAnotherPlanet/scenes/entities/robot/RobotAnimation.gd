@@ -14,4 +14,4 @@ func _physics_process(delta):
 
 
 func handle_idle_animation() -> void:
-	animation_player.play("girl_dialogue")
+	animation_player.play("robot_dialogue")

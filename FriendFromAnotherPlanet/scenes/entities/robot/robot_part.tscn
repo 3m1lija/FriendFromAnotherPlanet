@@ -1,17 +1,86 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2f1wwgc2sv22"]
+[gd_scene load_steps=7 format=3 uid="uid://d2f1wwgc2sv22"]
 
-[ext_resource type="Texture2D" uid="uid://cmuj56kflday4" path="res://assets/Sprites/Characters/character_0025.png" id="1_kegds"]
 [ext_resource type="Script" path="res://scenes/entities/robot/RobotPart.gd" id="1_rxh1g"]
+[ext_resource type="Texture2D" uid="uid://cy1n7s7g1yy7q" path="res://assets/Sprites/Characters/robot_part.png" id="2_gcrpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oaok1"]
-size = Vector2(24, 12)
+size = Vector2(14, 5)
+
+[sub_resource type="Animation" id="Animation_4wgia"]
+resource_name = "idle"
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_gcrpy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ws1wp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_gcrpy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4t21m"]
+_data = {
+"RESET": SubResource("Animation_ws1wp"),
+"idle": SubResource("Animation_4wgia")
+}
 
 [node name="RobotPart" type="Area2D"]
 script = ExtResource("1_rxh1g")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_kegds")
+position = Vector2(0, -5)
+scale = Vector2(2, 1)
+texture = ExtResource("2_gcrpy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(-1, -3.5)
 shape = SubResource("RectangleShape2D_oaok1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4t21m")
+}

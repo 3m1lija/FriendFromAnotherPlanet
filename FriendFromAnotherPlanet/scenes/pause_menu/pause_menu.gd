@@ -29,20 +29,20 @@ func resume() -> void:
 	print("Resuming game")
 	hide()
 	get_tree().paused = false
-	#if animation_player:
-		#animation_player.play_backwards("blur")
-	#else:
-		#print("AnimationPlayer is null")
+	if animation_player:
+		animation_player.play_backwards("blur")
+	else:
+		print("AnimationPlayer is null")
 
 
 func pause() -> void:
 	print("Pausing game")
 	get_tree().paused = true
 	show()
-	#if animation_player:
-		#animation_player.play("blur")
-	#else:
-		#print("AnimationPlayer is null")
+	if animation_player:
+		animation_player.play("blur")
+	else:
+		print("AnimationPlayer is null")
 
 
 func on_resume_pressed() -> void:

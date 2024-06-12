@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbmoso4rhwo6g"
-path="res://.godot/imported/forest.png-3f512ed1785b4a989e32c03282d84828.ctex"
+uid="uid://h7f4dsoit80j"
+path="res://.godot/imported/starsky.png-29ad827c82dfb1d369defb2aa742953c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backrounds/forest.png"
-dest_files=["res://.godot/imported/forest.png-3f512ed1785b4a989e32c03282d84828.ctex"]
+source_file="res://assets/Backrounds/starsky.png"
+dest_files=["res://.godot/imported/starsky.png-29ad827c82dfb1d369defb2aa742953c.ctex"]
 
 [params]
 
